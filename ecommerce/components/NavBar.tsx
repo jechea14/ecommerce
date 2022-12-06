@@ -1,19 +1,11 @@
-import { Anchor } from '@mantine/core';
+import Link from 'next/link'
 
 export function NavBar() {
     return (
-        <div className='flex justify-around m-4'>
-            <Anchor href="https://mantine.dev/" target="_blank" color="yellow">
-                Home
-            </Anchor>
-            <Anchor href="https://mantine.dev/" target="_blank">
-                Switches
-            </Anchor>
-            <Anchor href="https://mantine.dev/" target="_blank">
-                Keyboards
-            </Anchor>
-
-
+        <div className='flex justify-around m-4 '>
+            <Link href='/'>Home</Link>
+            <Link href='/switches'>Switches</Link>
+            <Link href='/keyboards'>Keyboards</Link>
         </div>
     )
 }
