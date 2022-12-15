@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {useQuery} from 'react-query'
 import { ProductData } from "./utils/data";
-
+import { Card } from './components/Card';
 
 export type ProductType = {
   id: number
@@ -30,10 +30,13 @@ function App() {
         {
           // data?.map(product => <p>{product.title}</p>)
           ProductData.map((product) => (
-            <div key={product.id}>
-              <h1>{product.name}</h1>
-              <h1>${product.price.toFixed(2)}</h1>
-              <img src={product.image[0]}/>
+            <div>
+              <Card 
+              key={product.id}
+              name={product.name} 
+              price={product.price} 
+              image={product.image[0]}
+              />
             </div>
           ))
         }
