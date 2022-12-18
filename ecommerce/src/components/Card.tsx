@@ -1,17 +1,16 @@
 import React from 'react'
+import {Product} from '../interfaces/index'
 
 type CardProps = {
-    name: string
-    price: number
-    image: string
+    item: Product
 }
 
-export const Card = ({name, price, image}: CardProps) => {
+export const Card: React.FC<CardProps> = ({item}) => {
     return (
         <div>
-            <h1>{name}</h1>
-            <h1>${price.toFixed(2)}</h1>
-            <img src={image}/>
+            <h1>{item.name}</h1>
+            <h1>${item.price.toFixed(2)}</h1>
+            <img src={item.image[0]}/>
         </div>
     )
 }

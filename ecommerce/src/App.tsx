@@ -3,15 +3,15 @@ import {useQuery} from 'react-query'
 import { ProductData } from "./utils/data";
 import { Card } from './components/Card';
 
-export type ProductType = {
-  id: number
-  category: string
-  description: string
-  image: string
-  price: number
-  title: string
-  amount: number
-}
+// export type ProductType = {
+//   id: number
+//   category: string
+//   description: string
+//   image: string
+//   price: number
+//   title: string
+//   amount: number
+// }
 
 function App() {
 
@@ -26,16 +26,14 @@ function App() {
 
   return (
     <div className="">
-      <div className='flex'>
+      <div className='grid gap-4 grid-cols-2'>
         {
           // data?.map(product => <p>{product.title}</p>)
           ProductData.map((product) => (
             <div>
               <Card 
               key={product.id}
-              name={product.name} 
-              price={product.price} 
-              image={product.image[0]}
+              item={product}
               />
             </div>
           ))
