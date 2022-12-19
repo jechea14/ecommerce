@@ -1,4 +1,19 @@
-import { Product } from "../interfaces";
+import { Product, Menu } from "../interfaces";
+
+export const MenuData: Menu[] = [
+    {
+        id: 1,
+        name: "Keyboards"
+    },
+    {
+        id: 2,
+        name: "Switches"
+    },
+    {
+        id: 3,
+        name: "Keycaps"
+    }
+]
 
 export const ProductData: Product[] = [
     {

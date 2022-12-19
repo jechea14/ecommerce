@@ -7,10 +7,12 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({item}) => {
     return (
-        <div>
-            <h1>{item.name}</h1>
-            <h1>${item.price.toFixed(2)}</h1>
-            <img src={item.image[0]}/>
+        <div className='border rounded-lg p-4 bg-white'>
+            <img src={item.image[0]} className='rounded-tl-lg rounded-tr-lg'/>
+            <div className='flex flex-col justify-between'>
+                <h1>{item.name}</h1>
+                <strong className='text-lg'>${item.price.toFixed(2)}</strong>
+            </div>
         </div>
     )
 }

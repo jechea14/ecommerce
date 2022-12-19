@@ -3,13 +3,12 @@ import { Card } from '../src/components/Card';
 
 export function Home() {
     return (
-        <div className='grid gap-4 grid-cols-2'>
+        <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {
-          // data?.map(product => <p>{product.title}</p>)
-          ProductData.map((product) => (
+          ProductData?.map((product) => (
               <Card 
-              key={product.id}
-              item={product}
+                key={product.id}
+                item={product}
               />
           ))
         }

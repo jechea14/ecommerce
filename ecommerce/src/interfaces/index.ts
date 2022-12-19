@@ -9,6 +9,10 @@ export type User = {
     name: string
   }
 
+export type Menu = {
+  id: number
+  name: string
+}
 
 export type Product = {
     id: number

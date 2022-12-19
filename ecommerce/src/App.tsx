@@ -7,6 +7,7 @@ import {Home} from '../pages/Home'
 import {Switches} from '../pages/Switches'
 import {Keycaps} from '../pages/Keycaps'
 import {Keyboards} from '../pages/Keyboards'
+import Container from '@mui/material/Container';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
 
 
   return (
-    <div>
+    <Container>
       <Navbar/>
 
       <Routes>
@@ -29,7 +30,7 @@ function App() {
         <Route path='/keyboards' element={<Keyboards/>} />
         <Route path='/keycaps' element={<Keycaps/>} />
       </Routes>
-    </div>
+    </Container>
   )
 }
 
