@@ -1,7 +1,7 @@
-import { ProductData } from "../src/utils/data";
-import { Card } from '../src/components/Card';
+import { ProductData } from "../utils/data";
+import { Card } from '../components/Card';
 
-export function Home() {
+export function HomePage() {
     return (
         <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {

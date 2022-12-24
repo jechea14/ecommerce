@@ -2,7 +2,6 @@ import {AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {VscAccount} from 'react-icons/vsc'
 import Drawer from '@mui/material/Drawer';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import { MenuData } from "../utils/data";
 
 export const Navbar = () => {
@@ -18,9 +17,7 @@ export const Navbar = () => {
                 onClose={() => setMenuOpen(false)}
             >
             {
-                MenuData?.map((menu) => (
-                    <Link key={menu.id} to={menu.name.toLowerCase()}>{menu.name}</Link>
-                ))
+
             }                  
             </Drawer>
 
@@ -43,9 +40,7 @@ export const Navbar = () => {
             {/* desktop menu */}
             <div className="hidden md:flex">
                 {
-                    MenuData?.map((menu) => (
-                        <Link key={menu.id} to={menu.name.toLowerCase()}>{menu.name}</Link>
-                    ))
+
                 } 
             </div>
 
