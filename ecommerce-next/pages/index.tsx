@@ -3,9 +3,6 @@ import {useQuery} from 'react-query'
 import { ProductData } from "../utils/data";
 import { Navbar } from '../components/Navbar';
 import {HomePage} from './HomePage'
-import {Switches} from './switches'
-import {Keycaps} from './keycaps'
-import {Keyboards} from './keyboards'
 import Container from '@mui/material/Container';
 
 
