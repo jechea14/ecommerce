@@ -1,7 +1,7 @@
 import { ProductData } from "../utils/data";
 import { Card } from '../components/Card';
 
-export function HomePage() {
+export default function HomePage() {
     return (
         <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {

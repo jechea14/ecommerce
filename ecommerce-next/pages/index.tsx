@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {useQuery} from 'react-query'
 import { ProductData } from "../utils/data";
 import { Navbar } from '../components/Navbar';
-import {HomePage} from './HomePage'
+import HomePage from './HomePage';
 import Container from '@mui/material/Container';
 
 
