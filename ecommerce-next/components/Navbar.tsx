@@ -3,6 +3,7 @@ import {VscAccount} from 'react-icons/vsc'
 import Drawer from '@mui/material/Drawer';
 import { useState } from 'react';
 import { MenuData } from "../utils/data";
+import Link from 'next/link'
 
 export const Navbar = () => {
     const [cartOpen, setCartOpen] = useState(false)
@@ -17,7 +18,7 @@ export const Navbar = () => {
                 onClose={() => setMenuOpen(false)}
             >
             {
-
+                MenuData.map(menu => <Link href={menu.name.toLowerCase()} key={menu.id}>{menu.name}</Link>)
             }                  
             </Drawer>
 
@@ -39,9 +40,9 @@ export const Navbar = () => {
             
             {/* desktop menu */}
             <div className="hidden md:flex">
-                {
-
-                } 
+            {
+                MenuData.map(menu => <Link href={menu.name.toLowerCase()} key={menu.id}>{menu.name}</Link>)
+            } 
             </div>
 
             {/* Account and Cart */}

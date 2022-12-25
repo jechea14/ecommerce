@@ -1,5 +1,10 @@
 import React from 'react'
+import Container from '@mui/material/Container';
+import { Navbar } from '../components/Navbar'
 
-export function Switches() {
-    return <h1>Switches</h1>
+
+export default function Switches() {
+    return <Container>
+        <Navbar/>
+    </Container>
 }
