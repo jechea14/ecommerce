@@ -5,6 +5,6 @@ import { Navbar } from '../components/Navbar'
 
 export default function Switches() {
     return <Container>
-        <Navbar/>
+        {/* <Navbar/> */}
     </Container>
 }

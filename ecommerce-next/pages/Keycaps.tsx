@@ -5,6 +5,6 @@ import { Navbar } from '../components/Navbar'
 
 export default function Keycaps() {
     return <Container>
-        <Navbar/>
+        {/* <Navbar/> */}
     </Container>
 }
