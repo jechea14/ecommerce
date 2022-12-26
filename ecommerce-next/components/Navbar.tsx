@@ -18,7 +18,7 @@ export const Navbar = () => {
                 onClose={() => setMenuOpen(false)}
             >
             {
-                MenuData.map(menu => <Link href={menu.name.toLowerCase()} key={menu.id}>{menu.name}</Link>)
+                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
             }                  
             </Drawer>
 
@@ -41,7 +41,7 @@ export const Navbar = () => {
             {/* desktop menu */}
             <div className="hidden md:flex">
             {
-                MenuData.map(menu => <Link href={menu.name.toLowerCase()} key={menu.id}>{menu.name}</Link>)
+                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
             } 
             </div>
 
