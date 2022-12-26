@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
-const product = () => {
+const Product = () => {
     const router = useRouter()
     const {id} = router.query
 
@@ -10,4 +10,4 @@ const product = () => {
   )
 }
 
-export default product
+export default Product
