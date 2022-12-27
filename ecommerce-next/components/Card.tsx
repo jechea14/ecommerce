@@ -1,6 +1,7 @@
 import React from 'react'
 import {Product} from '../interfaces/index'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type CardProps = {
     item: Product
@@ -17,7 +18,7 @@ export const Card: React.FC<CardProps> = ({item}) => {
                 className='rounded-tl-lg rounded-tr-lg'
             />
             <div className='flex flex-col justify-between'>
-                <h1>{item.name}</h1>
+                <Link href='/collections/[id]' as={`/collections/${item.slug}`} key={item.id}>{item.name}</Link>
                 <strong className='text-lg'>${item.price.toFixed(2)}</strong>
             </div>
         </div>

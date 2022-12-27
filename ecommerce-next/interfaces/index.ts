@@ -17,6 +17,7 @@ export type Menu = {
 export type Product = {
     id: number
     name: string
+    slug: string
     price: number
     amount?: number
     image: Array<string>

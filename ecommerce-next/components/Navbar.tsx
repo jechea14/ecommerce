@@ -18,7 +18,7 @@ export const Navbar = () => {
                 onClose={() => setMenuOpen(false)}
             >
             {
-                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
+                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} as={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
             }                  
             </Drawer>
 
@@ -36,12 +36,14 @@ export const Navbar = () => {
                 <AiOutlineMenu size={25} onClick={() => setMenuOpen(true)}/>
             </button>
 
-            <div>Logo</div>
+            <div>
+                <Link href={'/'}>Home</Link>
+            </div>
             
             {/* desktop menu */}
             <div className="hidden md:flex">
             {
-                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
+                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} as={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
             } 
             </div>
 

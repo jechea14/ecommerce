@@ -19,6 +19,7 @@ export const ProductData: Product[] = [
     {
         id: 1,
         name: "Gateron Oil King Linear Switches",
+        slug: "gateron-oil-king-linear-switches",
         price: 9.95,
         amount: 18,
         image: ["/images/gateron_oil_king1.webp", "/images/gateron_oil_king2.webp", "/images/gateron_oil_king3.webp", "/images/gateron_oil_king4.webp"],
@@ -41,7 +42,8 @@ export const ProductData: Product[] = [
     },
     {
         id: 2,
-        name: "C³Equalz X TKC Tangerine Linear Switches",
+        name: "C3Equalz X TKC Tangerine Linear Switches",
+        slug: "c3equalz-x-tkc-tangerine-linear-switches",
         price: 11.70,
         amount: 18,
         image: ["/images/tangerine1.webp", "/images/tangerine2.webp"],
@@ -60,6 +62,7 @@ export const ProductData: Product[] = [
     {
         id: 3,
         name: "SP-Star Meteor White Linear Switches",
+        slug: "sp-star-meteor-white-linear-switches",
         price: 9.18,
         amount: 18,
         image: ["/images/sp-star-meteor1.webp", "/images/sp-star-meteor2.webp", "/images/sp-star-meteor3.webp"],
@@ -80,6 +83,7 @@ export const ProductData: Product[] = [
     {
         id: 4,
         name: "Zeal Zealios V1 Redux Tactile Switches",
+        slug: "zeal-zealios-v1-redux-tactile-switches",
         price: 8.50,
         amount: 10,
         image: ["/images/zeal-zealios-v1-redux1.webp", "/images/zeal-zealios-v1-redux2.webp", "/images/zeal-zealios-v1-redux3.webp"],
@@ -99,7 +103,8 @@ export const ProductData: Product[] = [
     },
     {
         id: 5,
-        name: "C³Equalz X TKC Kiwi Tactile Switches",
+        name: "C3Equalz X TKC Kiwi Tactile Switches",
+        slug: "c3equalz-x-tkc-kiwi-tactile-switches",
         price: 11.70,
         amount: 18,
         image: ["/images/c3equalz-x-tkc-kiwi1.webp", "/images/c3equalz-x-tkc-kiwi2.webp", "/images/c3equalz-x-tkc-kiwi3.webp"],
@@ -118,6 +123,7 @@ export const ProductData: Product[] = [
     {
         id: 6,
         name: "TTC Bluish White Tactile Switches",
+        slug: "ttc-bluish-white-tactile-switches",
         price: 8.64,
         amount: 18,
         image: ["/images/ttc-bluish1.webp", "/images/ttc-bluish2.webp", "/images/ttc-bluish3.webp"],
