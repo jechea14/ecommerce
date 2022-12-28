@@ -1,33 +1,41 @@
 import { Product } from "../../../interfaces"
+import {server} from '../../../config/index'
 
 type ProductProps = {
     product: Product
 }
 
-export default function Collections({product}: ProductProps) {
-    return <div></div>
+import React from 'react'
+
+const collection = ({product}: any) => {
+    console.log(product)
+  return (
+    <div>collection</div>
+  )
 }
 
-// export const getStaticProps = async (context: string) => {
-//     const res = await fetch(`https://localhost:3000/api/collections/${context.params.id}`)
-//     const product = await res.json()
-  
-//     return {
-//       props: {
-//         product
-//       }
-//     }
-//   }
 
-// export const getStaticPaths = async () => {
-//     const res = await fetch(`https://localhost:3000/api/collections`)
+export const getStaticProps = async (context: any) => {
+    const res = await fetch(`${server}/api/collections/${context.params.id}`)
+    const product = await res.json()
+    
+    return {
+        props: {
+            product
+        }
+    }
+}
 
-//     const product = await res.json()
-//     const ids = product.map(p => p.id)
-//     const p
+export const getStaticPaths = async () => {
+    const res = await fetch(`${server}/api/collections`)
+    const products = await res.json()
+    const ids = products.map((p: { slug: any }) => p.slug)
+    const paths = ids.map((id: { toString: () => any }) => ({params: {id: id.toString()}}))
+    
+    return {
+        paths,
+        fallback: false
+    }
+}
 
-//     return {
-//         paths: {params: {id: }}
-//     }
-
-// }
+export default collection

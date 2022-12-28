@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({item}) => {
                 className='rounded-tl-lg rounded-tr-lg'
             />
             <div className='flex flex-col justify-between'>
-                <Link href='/collections/[id]' as={`/collections/${item.slug}`} key={item.id}>{item.name}</Link>
+                <Link href={`/collections/${item.slug}`} as={`/collections/${item.slug}`} key={item.id}>{item.name}</Link>
                 <strong className='text-lg'>${item.price.toFixed(2)}</strong>
             </div>
         </div>
