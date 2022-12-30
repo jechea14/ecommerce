@@ -1,6 +1,6 @@
 import {AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {VscAccount} from 'react-icons/vsc'
-import Drawer from '@mui/material/Drawer';
+import { Drawer, useMantineTheme } from '@mantine/core';
 import { useState } from 'react';
 import { MenuData } from "../utils/data";
 import Link from 'next/link'
@@ -13,8 +13,8 @@ export const Navbar = () => {
         <nav className="sticky top-0 flex justify-between items-center mt-2 mb-2">
             {/* Menu Drawer */}
             <Drawer
-                anchor='left'
-                open={menuOpen}
+                position ='left'
+                opened={menuOpen}
                 onClose={() => setMenuOpen(false)}
             >
             {
@@ -24,8 +24,8 @@ export const Navbar = () => {
 
             {/* Cart Drawer */}
             <Drawer
-                anchor='right'
-                open={cartOpen}
+                position ='right'
+                opened={cartOpen}
                 onClose={() => setCartOpen(false)}
             >
                 <h1>Cart placeholder</h1>                 
