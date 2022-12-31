@@ -12,7 +12,7 @@ type ProductProps = {
 
 import React from 'react'
 
-const collection = ({product}: ProductProps) => {
+const Collection = ({product}: ProductProps) => {
   const [amount, setAmount] = useState(1)
 
   const decreaseAmount = () => {
@@ -100,4 +100,4 @@ export const getStaticPaths = async () => {
     }
 }
 
-export default collection
+export default Collection
