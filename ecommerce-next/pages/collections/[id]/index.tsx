@@ -49,10 +49,10 @@ const collection = ({product}: ProductProps) => {
         <h1 className="text-xl"><strong>${product.price.toFixed(2)}</strong></h1>
         <h2>{`Size: ${product.amount} Set`}</h2>
 
-        <div className="flex space-x-2 flex-wrap">
-          <div className="flex">
+        <div className="flex space-x-4 flex-wrap">
+          <div className="">
             <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'-'}/>
-            <input type="number"/>
+            <input className="text-center" type="number" min="1" size="2" defaultValue="1"/>
             <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'+'}/>
           </div>
           <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'Add to cart'}/>
