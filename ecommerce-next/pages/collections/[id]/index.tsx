@@ -2,9 +2,7 @@ import { Product } from "../../../interfaces"
 import {server} from '../../../config/index'
 import Image from "next/image"
 import { Carousel } from '@mantine/carousel';
-import { Input } from '@mantine/core';
 import { useState } from "react";
-import Button from "../../../components/Button";
 
 type ProductProps = {
     product: Product
@@ -51,11 +49,11 @@ const Collection = ({product}: ProductProps) => {
 
         <div className="flex space-x-4 flex-wrap">
           <div className="">
-            <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'-'}/>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5">-</button>
             <input className="text-center" type="number" min="1" size={2} defaultValue={1}/>
-            <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'+'}/>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5">+</button>
           </div>
-          <Button bgColor={"bg-gray-500"} textColor={"text-slate-100"} value={'Add to cart'}/>
+          <button className="bg-gray-500 text-slate-100 py-1 px-5">Add to cart</button>
         </div>
 
         <p>{product.description}</p>
@@ -79,7 +77,7 @@ const Collection = ({product}: ProductProps) => {
 
 export const getStaticProps = async (context: any) => {
     const res = await fetch(`${server}/api/collections/${context.params.id}`)
-    const product: ProductProps = await res.json()
+    const product = await res.json()
     
     return {
         props: {
