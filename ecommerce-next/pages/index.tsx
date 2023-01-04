@@ -1,7 +1,6 @@
 import { Product } from "../interfaces";
 import {server} from '../config/index'
 import { Card } from '../components/Card';
-import { useRouter } from 'next/router';
 import useSWR from 'swr'
 
 type ProductProps = {
@@ -27,7 +26,6 @@ export default function Home() {
   // }))
   // console.log(categories)
 
-  const { query } = useRouter()
   const { data, error } = useSWR(
     () => `/api/collections`,
     fetcher
@@ -35,6 +33,7 @@ export default function Home() {
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
+
   return (
     <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
     {

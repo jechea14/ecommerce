@@ -23,6 +23,7 @@ const fetcher = async (url: string) => {
 
 
 const Collection = () => {
+  const [amount, setAmount] = useState(1)
   const { query } = useRouter()
   const { data, error } = useSWR(
     () => query.id && `/api/collections/${query.id}`,
@@ -31,20 +32,19 @@ const Collection = () => {
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
-  // const [amount, setAmount] = useState(1)
 
-  // const decreaseAmount = () => {
-  //   if(amount > 0) {
-  //     setAmount(amount - 1)
-  //   }
-  //   else{
-  //     setAmount(0)
-  //   }
-  // }
+  const decreaseAmount = () => {
+    if(amount > 0) {
+      setAmount(amount - 1)
+    }
+    else{
+      setAmount(0)
+    }
+  }
 
-  // const increaseAmount = () => {
-  //   setAmount(amount + 1)
-  // }
+  const increaseAmount = () => {
+    setAmount(amount + 1)
+  }
 
   return (
     <main className="md:flex pt-4">
@@ -70,7 +70,7 @@ const Collection = () => {
         <div className="flex space-x-4 flex-wrap">
           <div className="">
             <button className="bg-gray-500 text-slate-100 py-1 px-5">-</button>
-            <input className="text-center" type="number" min="1" size={2} defaultValue={1}/>
+            <input className="text-center" type="number" min="1" size={2} defaultValue={amount}/>
             <button className="bg-gray-500 text-slate-100 py-1 px-5">+</button>
           </div>
           <button className="bg-gray-500 text-slate-100 py-1 px-5">Add to cart</button>

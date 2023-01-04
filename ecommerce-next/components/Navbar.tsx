@@ -18,7 +18,9 @@ export const Navbar = () => {
                 onClose={() => setMenuOpen(false)}
             >
             {
-                MenuData.map(menu => <Link href={`/${menu.name.toLowerCase()}`} as={`/${menu.name.toLowerCase()}`} key={menu.id}>{menu.name}</Link>)
+                MenuData.map(menu => <div key={menu.id}>
+                    <Link href={`/${menu.name.toLowerCase()}`} as={`/${menu.name.toLowerCase()}`}>{menu.name}</Link>
+                </div>)
             }                  
             </Drawer>
 
