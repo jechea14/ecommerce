@@ -1,6 +1,5 @@
 import React from 'react'
 import { Product } from "../../../interfaces"
-import {server} from '../../../config/index'
 import Image from "next/image"
 import { Carousel } from '@mantine/carousel';
 import { useState } from "react";

@@ -1,5 +1,4 @@
 import { Product } from "../interfaces";
-import {server} from '../config/index'
 import { Card } from '../components/Card';
 import useSWR from 'swr'
 
