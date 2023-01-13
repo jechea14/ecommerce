@@ -1,6 +1,7 @@
 import { Product } from "../interfaces";
 import { Card } from '../components/Card';
 import useSWR from 'swr'
+import { Loader } from '@mantine/core';
 
 type ProductProps = {
   products: Array<Product>
@@ -31,10 +32,10 @@ export default function Home() {
   )
 
   if (error) return <div>{error.message}</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <div className="flex justify-center items-center h-full"><Loader variant="dots"/></div>
 
   return (
-    <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+    <main className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
     {
       data?.map((product: Product) => (
           <Card 
@@ -43,7 +44,7 @@ export default function Home() {
           />
       ))
     }
-  </div>
+  </main>
   )
 }
 

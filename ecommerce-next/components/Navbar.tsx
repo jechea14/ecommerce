@@ -10,7 +10,7 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <nav className="sticky top-0 flex justify-between items-center mt-2 mb-2">
+        <nav className="flex justify-between items-center mt-2 mb-2">
             {/* Menu Drawer */}
             <Drawer
                 position ='left'

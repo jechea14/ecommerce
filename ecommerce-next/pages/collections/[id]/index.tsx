@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr'
 
 type ProductProps = {
-    product: Product
+  handleAddToCart: (clickedItem: Product) => void
 }
 
 const fetcher = async (url: string) => {
@@ -17,6 +17,7 @@ const fetcher = async (url: string) => {
   if (res.status !== 200) {
     throw new Error(data.message)
   }
+  console.log(data)
   return data
 }
 
@@ -45,6 +46,10 @@ const Collection = () => {
     setAmount(amount + 1)
   }
 
+  const addCart = () => {
+    console.log(amount)
+  }
+
   return (
     <main className="md:flex pt-4">
       <div>
@@ -68,11 +73,11 @@ const Collection = () => {
 
         <div className="flex space-x-4 flex-wrap">
           <div className="">
-            <button className="bg-gray-500 text-slate-100 py-1 px-5">-</button>
-            <input className="text-center" type="number" min="1" size={2} defaultValue={amount}/>
-            <button className="bg-gray-500 text-slate-100 py-1 px-5">+</button>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={decreaseAmount}>-</button>
+            <input className="text-center" type="number" min="1" size={2} value={amount} onChange={() => setAmount(amount)}/>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={increaseAmount}>+</button>
           </div>
-          <button className="bg-gray-500 text-slate-100 py-1 px-5">Add to cart</button>
+          <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={addCart}>Add to cart</button>
         </div>
 
         <p>{data.description}</p>
