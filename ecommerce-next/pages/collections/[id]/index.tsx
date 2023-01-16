@@ -5,6 +5,7 @@ import { Carousel } from '@mantine/carousel';
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import useSWR from 'swr'
+import { useShoppingCart } from '../../../context/ShoppingCartContext';
 
 type ProductProps = {
   handleAddToCart: (clickedItem: Product) => void
@@ -17,13 +18,12 @@ const fetcher = async (url: string) => {
   if (res.status !== 200) {
     throw new Error(data.message)
   }
-  console.log(data)
   return data
 }
 
 
 const Collection = () => {
-  const [amount, setAmount] = useState(1)
+  const {addToCart} = useShoppingCart()
   const { query } = useRouter()
   const { data, error } = useSWR(
     () => query.id && `/api/collections/${query.id}`,
@@ -32,23 +32,6 @@ const Collection = () => {
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
-
-  const decreaseAmount = () => {
-    if(amount > 0) {
-      setAmount(amount - 1)
-    }
-    else{
-      setAmount(0)
-    }
-  }
-
-  const increaseAmount = () => {
-    setAmount(amount + 1)
-  }
-
-  const addCart = () => {
-    console.log(amount)
-  }
 
   return (
     <main className="md:flex pt-4">
@@ -69,15 +52,14 @@ const Collection = () => {
       <div className="flex flex-col space-y-4">
         <h1 className="text-xl pt-4">{data.name}</h1>
         <h1 className="text-xl"><strong>${data.price.toFixed(2)}</strong></h1>
-        <h2>{`Size: ${data.amount} Set`}</h2>
+        <h2>{`Size: ${data.amount} in each pack`}</h2>
 
         <div className="flex space-x-4 flex-wrap">
           <div className="">
-            <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={decreaseAmount}>-</button>
-            <input className="text-center" type="number" min="1" size={2} value={amount} onChange={() => setAmount(amount)}/>
-            <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={increaseAmount}>+</button>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5" >-</button>
+            <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={() => addToCart(data.id)}>+</button>
           </div>
-          <button className="bg-gray-500 text-slate-100 py-1 px-5" onClick={addCart}>Add to cart</button>
+          <button className="bg-gray-500 text-slate-100 py-1 px-5" >Add to cart</button>
         </div>
 
         <p>{data.description}</p>

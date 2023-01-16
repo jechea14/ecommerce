@@ -6,7 +6,7 @@ type ShoppingCartProviderProps = {
 }
 
 type ShoppingCartContext = {
-  addToCart: (item: Product, amount: number) => void
+  addToCart: (id: number) => void
   cartItems: CartItem[]
 }
 
@@ -20,14 +20,26 @@ const ShoppingCartContext = createContext({} as ShoppingCartContext)
 export const useShoppingCart = () => useContext(ShoppingCartContext)
 
 export const ShoppingCartProvider = ({children}: ShoppingCartProviderProps) => {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState(Array<CartItem>)
 
-  const addToCart = (item: Product, amount: number) => {
-    // setCartItems(prev => {
-    //   if (prev.find(item => item.id === item.id) == null) {
-    //     return [...prev, {}]
-    //   }
-    // })
+  const addToCart = (id: number) => {
+    setCartItems(prev => {
+      if (prev.find(item => item.id === id) == null) {
+          console.log("add first item to cart")
+          return [...prev, {id, quantity: 1}]
+      }
+      else {
+          return prev.map(item => {
+              if(item.id === id) {
+                  return {...item, quantity: item.quantity + 1}
+              }
+              else {
+                  return item
+              }
+          })
+      }
+    })
+    console.log(cartItems)
   }
   
   return (
@@ -36,3 +48,4 @@ export const ShoppingCartProvider = ({children}: ShoppingCartProviderProps) => {
     </ShoppingCartContext.Provider>
   )
 }
+
