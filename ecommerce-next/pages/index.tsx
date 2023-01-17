@@ -1,24 +1,24 @@
 import { Product } from "../interfaces";
-import { Card } from '../components/Card';
-import useSWR from 'swr'
-import { Loader } from '@mantine/core';
+import { Card } from "../components/Card";
+import useSWR from "swr";
+import { Loader } from "@mantine/core";
 
 type ProductProps = {
-  products: Array<Product>
-}
+  products: Array<Product>;
+};
 
 const fetcher = async (url: string) => {
-  const res = await fetch(url)
-  const data = await res.json()
-
+  const res = await fetch(url);
+  const data = await res.json();
+  console.log(data[0]);
   if (res.status !== 200) {
-    throw new Error(data.message)
+    throw new Error(data.message);
   }
-  return data
-}
+  return data;
+};
 
 export default function Home() {
-    // const getProducts = async (): Promise<ProductType[]> => await (await fetch('https://fakestoreapi.com/products')).json()
+  // const getProducts = async (): Promise<ProductType[]> => await (await fetch('https://fakestoreapi.com/products')).json()
   // const {data, isLoading, error} = useQuery<ProductType[]>('products', getProducts)
   // const allCats = ProductData.map(item=>item.switchType)
   // const categories = (allCats.filter((item, i) => {
@@ -26,26 +26,23 @@ export default function Home() {
   // }))
   // console.log(categories)
 
-  const { data, error } = useSWR(
-    () => `/api/collections`,
-    fetcher
-  )
+  const { data, error } = useSWR(() => `/api/collections`, fetcher);
 
-  if (error) return <div>{error.message}</div>
-  if (!data) return <div className="flex justify-center items-center h-full"><Loader variant="dots"/></div>
+  if (error) return <div>{error.message}</div>;
+  if (!data)
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Loader variant="dots" />
+      </div>
+    );
 
   return (
-    <main className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-    {
-      data?.map((product: Product) => (
-          <Card 
-            key={product.id}
-            item={product}
-          />
-      ))
-    }
-  </main>
-  )
+    <main className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {data?.map((product: Product) => (
+        <Card key={product.id} item={product} />
+      ))}
+    </main>
+  );
 }
 
 // export const getStaticProps = async () => {
@@ -58,4 +55,3 @@ export default function Home() {
 //     }
 //   }
 // }
-
