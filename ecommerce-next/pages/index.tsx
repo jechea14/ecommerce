@@ -10,7 +10,7 @@ type ProductProps = {
 const fetcher = async (url: string) => {
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data[0]);
+
   if (res.status !== 200) {
     throw new Error(data.message);
   }
@@ -26,7 +26,7 @@ export default function Home() {
   // }))
   // console.log(categories)
 
-  const { data, error } = useSWR(() => `/api/collections`, fetcher);
+  const { data, error } = useSWR<Product[]>(() => `/api/collections`, fetcher);
 
   if (error) return <div>{error.message}</div>;
   if (!data)

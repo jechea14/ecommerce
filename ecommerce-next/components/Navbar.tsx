@@ -9,6 +9,7 @@ import Cart from "./Cart";
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useMantineTheme();
 
   return (
     <nav className="flex justify-between items-center mt-2 mb-2">
@@ -35,6 +36,7 @@ export const Navbar = () => {
         position="right"
         opened={cartOpen}
         onClose={() => setCartOpen(false)}
+        overlayColor={theme.colors.dark[9]}
       >
         <Cart />
       </Drawer>

@@ -23,7 +23,7 @@ const fetcher = async (url: string) => {
 };
 
 const Collection = () => {
-  const { addToCart } = useShoppingCart();
+  const { addToCart, decreaseCartQuaantity } = useShoppingCart();
   const { query } = useRouter();
   const { data, error } = useSWR(
     () => query.id && `/api/collections/${query.id}`,
@@ -61,7 +61,12 @@ const Collection = () => {
 
         <div className="flex space-x-4 flex-wrap">
           <div className="">
-            <button className="bg-gray-500 text-slate-100 py-1 px-5">-</button>
+            <button
+              className="bg-gray-500 text-slate-100 py-1 px-5"
+              onClick={() => decreaseCartQuaantity(data.id)}
+            >
+              -
+            </button>
             <button
               className="bg-gray-500 text-slate-100 py-1 px-5"
               onClick={() => addToCart(data.id)}
