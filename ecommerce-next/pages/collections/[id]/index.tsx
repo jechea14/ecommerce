@@ -2,7 +2,6 @@ import React from "react";
 import { Product } from "../../../interfaces";
 import Image from "next/image";
 import { Carousel } from "@mantine/carousel";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useShoppingCart } from "../../../context/ShoppingCartContext";
