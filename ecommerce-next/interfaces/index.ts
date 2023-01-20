@@ -23,5 +23,6 @@ export type Product = {
     image: Array<string>
     description: string
     feature?: Array<string>
-    switchType: "Linear" | "Tactile" | "Clicky"
+    productType: "Keycap" | "Switch" | "Keyboard"
+    switchType?: "Linear" | "Tactile" | "Clicky"
 }

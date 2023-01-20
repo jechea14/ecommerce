@@ -38,6 +38,7 @@ export const ProductData: Product[] = [
                     "MX Style",
                     "Factory Lubed"
                 ],
+        productType: "Switch",
         switchType: "Linear"
     },
     {
@@ -57,6 +58,7 @@ export const ProductData: Product[] = [
                     "Lightly Factory Lubed",
                     "MX-Style",
                 ],
+        productType: "Switch",
         switchType: "Linear"
     },
     {
@@ -78,6 +80,7 @@ export const ProductData: Product[] = [
                     "Factory Lubed",
                     "MX-Style",
                 ],
+        productType: "Switch",
         switchType: "Linear"
     },
     {
@@ -99,6 +102,7 @@ export const ProductData: Product[] = [
                     "Medium Tactile, Bump Mid-Travel",
                     'No SMD LED Cutout Underneath for Optimum Switch Acoustics, aka "thock"'
                 ],
+        productType: "Switch",
         switchType: "Tactile"
     },
     {
@@ -118,6 +122,7 @@ export const ProductData: Product[] = [
                     "5-Pin PCB Mount",
                     "Lightly Factory Lubed",
                 ],
+        productType: "Switch",
         switchType: "Tactile"
     },
     {
@@ -139,6 +144,7 @@ export const ProductData: Product[] = [
                     "Bottom-Out: 42g",
                     "Silicone Dampener",
                 ],
+        productType: "Switch",
         switchType: "Tactile"
     },
 
