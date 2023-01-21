@@ -14,12 +14,11 @@ const fetcher = async (url: string) => {
   return data;
 };
 
-type switchesProps = {};
-
 const switchCategories = ["Linear", "Tactile", "Clicky"];
 
 export default function Switches() {
   const { data, error } = useSWR<Product[]>(() => `/api/collections`, fetcher);
+  const [filterTags, setFilterTags] = useState(Array<string>);
   if (error) return <div>{error.message}</div>;
   if (!data)
     return (
@@ -27,8 +26,6 @@ export default function Switches() {
         <Loader variant="dots" />
       </div>
     );
-
-  const [filterTags, setFilterTags] = useState(Array<string>);
 
   const filterSwitches = data.filter((node) =>
     filterTags.length > 0
