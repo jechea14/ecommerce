@@ -27,7 +27,11 @@ export default function Switches() {
       </div>
     );
 
-  const filterSwitches = data.filter((node) =>
+  const filterToSwitches = data?.filter(
+    (item) => item.productType === "Switch"
+  );
+
+  const filterSwitches = filterToSwitches.filter((node) =>
     filterTags.length > 0
       ? filterTags.every((filterTag) => node.switchType?.includes(filterTag))
       : data

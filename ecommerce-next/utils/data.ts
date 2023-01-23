@@ -147,5 +147,52 @@ export const ProductData: Product[] = [
         productType: "Switch",
         switchType: "Tactile"
     },
+    {
+        id: 7,
+        name: "PBTfans™ WOB Keycap Set Doubleshot PBT",
+        slug: "pbtfans-wob-keycap-set-doubleshot-pbt",
+        price: 75.00,
+        image: ["/images/keycaps/pbtfans_wob/pbtfans_wob1.webp", "/images/keycaps/pbtfans_wob/pbtfans_wob2.webp"],
+        description: "PBTfans™ WOB Keycap Set showcases white legends on a black base keycap set with additional white accents. Coming in a doubleshot PBT material for more durability.",
+        feature: [
+                    "Cherry Profile", 
+                    "Manufactured by PBTfans",
+                    "Doubleshot",
+                    "PBT Material",
+                    "MX Compatible",
+                ],
+        productType: "Keycap",
+    },
+    {
+        id: 8,
+        name: "JTK Night Sakura",
+        slug: "jtk-night-sakura",
+        price: 99.00,
+        image: ["/images/keycaps/nightSakura/NightSakura_Base_.webp", "/images/keycaps/pbtfans_wob/pbtfans_wob1.webp"],
+        description: "PBTfans™ WOB Keycap Set showcases white legends on a black base keycap set with additional white accents. Coming in a doubleshot PBT material for more durability.",
+        feature: [
+                    "Cherry Profile", 
+                    "Material : ABS Double-shot",
+                    "Made by JTK",
+                    "Designed by Rifen",
+                ],
+        productType: "Keycap",
+    },
+    {
+        id: 9,
+        name: "PBTfans Klein Blue Keycap Set Doubleshot ABS",
+        slug: "pbtfans-klein-blue-keycap-set-doubleshot-abs",
+        price: 75.00,
+        image: ["/images/keycaps/pbtfansKleinBlue/pbtfans_klein_blue1.webp", "/images/keycaps/pbtfansKleinBlue/pbtfans_klein_blue2.webp", "/images/keycaps/pbtfansKleinBlue/pbtfans_klein_blue3.webp"],
+        description: "PBTfans Klein Blue Keycap Set takes inspiration from one of the greatest artists in history, Yves Klein. Bringing heavy influence on ultramarine, the blue used in this keycap set features a semi-transparent material very similar to what is found on another popular set, PBTfans Neon.",
+        feature: [
+                    "Cherry Profile", 
+                    "Manufactured by PBTfans",
+                    "ABS Material (Semi-Transparent)",
+                    "Doubleshot (Sub-legends UV Printed)",
+                    "MX Compatible"
+                ],
+        productType: "Keycap",
+    },
 
 ]
