@@ -2,6 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import { Product } from "../interfaces/index";
 import Image from "next/image";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 type CartItemProps = {
   id: number;
@@ -20,22 +21,41 @@ const fetcher = async (url: string) => {
 
 export const CartItem = ({ id, quantity }: CartItemProps) => {
   const { data, error } = useSWR<Product[]>(`/api/collections`, fetcher);
+  const { decreaseCartQuantity, addToCart } = useShoppingCart();
   if (error) return <div>{error.message}</div>;
   const item = data?.find((i: any) => i.id === id);
   if (item == null) return null;
 
   return (
-    <div className="flex flex-col items-center overflow-auto">
-      <Image
-        src={item.image[0]}
-        alt={item.name}
-        width={150}
-        height={150}
-        className="rounded-tl-lg rounded-tr-lg"
-      />
-      <h1>{item.name}</h1>
-      <p>{quantity}</p>
-      <p>${(item.price * quantity).toFixed(2)}</p>
+    <div className="flex flex-col items-center space-y-3 border-t-2 pt-4 border-slate-400">
+      <div className="flex space-x-2">
+        <Image
+          src={item.image[0]}
+          alt={item.name}
+          width={65}
+          height={65}
+          className=""
+        />
+        <h1>{item.name}</h1>
+      </div>
+      <div className="text-center space-y-2">
+        <p>${(item.price * quantity).toFixed(2)}</p>
+        <div className="flex space-x-3 items-center">
+          <button
+            className="bg-gray-500 text-slate-100 py-1 px-5"
+            onClick={() => decreaseCartQuantity(item.id)}
+          >
+            -
+          </button>
+          <p>{quantity}</p>
+          <button
+            className="bg-gray-500 text-slate-100 py-1 px-5"
+            onClick={() => addToCart(item.id)}
+          >
+            +
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

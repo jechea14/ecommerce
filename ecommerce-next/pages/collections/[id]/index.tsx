@@ -22,7 +22,7 @@ const fetcher = async (url: string) => {
 };
 
 const Collection = () => {
-  const { addToCart, decreaseCartQuaantity } = useShoppingCart();
+  const { addToCart, decreaseCartQuantity } = useShoppingCart();
   const { query } = useRouter();
   const { data, error } = useSWR(
     () => query.id && `/api/collections/${query.id}`,
@@ -56,13 +56,15 @@ const Collection = () => {
         <h1 className="text-xl">
           <strong>${data.price.toFixed(2)}</strong>
         </h1>
-        <h2>{`Size: ${data.amount} in each pack`}</h2>
+        {data.amount == undefined ? null : (
+          <h2>{`Size: ${data.amount} in each pack`}</h2>
+        )}
 
         <div className="flex space-x-4 flex-wrap">
           <div className="">
             <button
               className="bg-gray-500 text-slate-100 py-1 px-5"
-              onClick={() => decreaseCartQuaantity(data.id)}
+              onClick={() => decreaseCartQuantity(data.id)}
             >
               -
             </button>
@@ -73,9 +75,9 @@ const Collection = () => {
               +
             </button>
           </div>
-          <button className="bg-gray-500 text-slate-100 py-1 px-5">
+          {/* <button className="bg-gray-500 text-slate-100 py-1 px-5">
             Add to cart
-          </button>
+          </button> */}
         </div>
 
         <p>{data.description}</p>
@@ -91,28 +93,5 @@ const Collection = () => {
     </main>
   );
 };
-
-// export const getStaticProps = async (context: any) => {
-//     const res = await fetch(`${server}/api/collections/${context.params.id}`)
-//     const product = await res.json()
-
-//     return {
-//         props: {
-//             product
-//         }
-//     }
-// }
-
-// export const getStaticPaths = async () => {
-//     const res = await fetch(`${server}/api/collections`)
-//     const products = await res.json()
-//     const ids = products.map((product: { slug: ProductProps }) => product.slug)
-//     const paths = ids.map((id: { toString: () => string }) => ({params: {id: id.toString()}}))
-
-//     return {
-//         paths,
-//         fallback: false
-//     }
-// }
 
 export default Collection;

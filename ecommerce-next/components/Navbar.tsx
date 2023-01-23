@@ -1,23 +1,27 @@
 import { AiOutlineShoppingCart, AiOutlineMenu } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
-import { Drawer, useMantineTheme } from "@mantine/core";
+// import { useMantineTheme } from "@mantine/core";
 import { useState } from "react";
 import { MenuData } from "../utils/data";
 import Link from "next/link";
 import Cart from "./Cart";
+import { useShoppingCart } from "../context/ShoppingCartContext";
+import Drawer from "@mui/material/Drawer";
 
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const theme = useMantineTheme();
+  // const theme = useMantineTheme();
+  const { cartQuantity } = useShoppingCart();
 
   return (
     <nav className="flex justify-between items-center mt-2 mb-2">
       {/* Menu Drawer */}
       <Drawer
-        position="left"
-        opened={menuOpen}
+        anchor="left"
+        open={menuOpen}
         onClose={() => setMenuOpen(false)}
+        variant="temporary"
       >
         {MenuData.map((menu) => (
           <div key={menu.id}>
@@ -33,10 +37,10 @@ export const Navbar = () => {
 
       {/* Cart Drawer */}
       <Drawer
-        position="right"
-        opened={cartOpen}
+        anchor="right"
+        open={cartOpen}
         onClose={() => setCartOpen(false)}
-        overlayColor={theme.colors.dark[9]}
+        variant="temporary"
       >
         <Cart />
       </Drawer>
@@ -51,7 +55,7 @@ export const Navbar = () => {
       </div>
 
       {/* desktop menu */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex md: space-x-6">
         {MenuData.map((menu) => (
           <Link
             href={`/${menu.name.toLowerCase()}`}
@@ -66,10 +70,15 @@ export const Navbar = () => {
       {/* Account and Cart */}
       <div className="flex gap-x-2">
         <button>
-          <VscAccount size={25} />
+          <VscAccount size={28} />
         </button>
-        <button onClick={() => setCartOpen(true)}>
-          <AiOutlineShoppingCart size={27} />
+        <button onClick={() => setCartOpen(true)} className="relative">
+          <AiOutlineShoppingCart size={30} />
+          {cartQuantity > 0 && (
+            <div className="rounded-2xl w-5 h-5 bg-red-600 flex justify-center items-center absolute bottom-4 -right-1">
+              {cartQuantity}
+            </div>
+          )}
         </button>
       </div>
     </nav>

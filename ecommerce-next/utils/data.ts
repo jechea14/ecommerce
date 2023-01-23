@@ -3,15 +3,15 @@ import { Product, Menu } from "../interfaces";
 export const MenuData: Menu[] = [
     {
         id: 1,
-        name: "Keyboards"
-    },
-    {
-        id: 2,
         name: "Switches"
     },
     {
-        id: 3,
+        id: 2,
         name: "Keycaps"
+    },
+    {
+        id: 3,
+        name: "Keyboards"
     }
 ]
 
@@ -168,7 +168,7 @@ export const ProductData: Product[] = [
         name: "JTK Night Sakura",
         slug: "jtk-night-sakura",
         price: 99.00,
-        image: ["/images/keycaps/nightSakura/NightSakura_Base_.webp", "/images/keycaps/pbtfans_wob/pbtfans_wob1.webp"],
+        image: ["/images/keycaps/nightSakura/NightSakura_Base_.webp"],
         description: "PBTfans™ WOB Keycap Set showcases white legends on a black base keycap set with additional white accents. Coming in a doubleshot PBT material for more durability.",
         feature: [
                     "Cherry Profile", 

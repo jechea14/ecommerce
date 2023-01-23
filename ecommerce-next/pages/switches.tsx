@@ -17,10 +17,13 @@ const fetcher = async (url: string) => {
 const switchCategories = ["Linear", "Tactile", "Clicky"];
 
 export default function Switches() {
-  const { data, error } = useSWR<Product[]>(() => `/api/collections`, fetcher);
+  const { data, error, isLoading } = useSWR<Product[]>(
+    () => `/api/collections`,
+    fetcher
+  );
   const [filterTags, setFilterTags] = useState(Array<string>);
   if (error) return <div>{error.message}</div>;
-  if (!data)
+  if (isLoading)
     return (
       <div className="flex justify-center items-center h-full">
         <Loader variant="dots" />
@@ -31,7 +34,7 @@ export default function Switches() {
     (item) => item.productType === "Switch"
   );
 
-  const filterSwitches = filterToSwitches.filter((node) =>
+  const filterSwitches = filterToSwitches?.filter((node) =>
     filterTags.length > 0
       ? filterTags.every((filterTag) => node.switchType?.includes(filterTag))
       : data
@@ -47,8 +50,9 @@ export default function Switches() {
     }
   };
   return (
-    <main>
-      <div className="flex flex-col">
+    <main className="space-y-4">
+      <h1 className="text-xl">Switches</h1>
+      <div className="flex md:flex-col space-x-5 md:space-x-0">
         {switchCategories?.map((switchCategory) => (
           <label key={switchCategory}>
             <input
