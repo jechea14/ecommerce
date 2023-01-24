@@ -7,6 +7,7 @@ import Link from "next/link";
 import Cart from "./Cart";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -23,16 +24,22 @@ export const Navbar = () => {
         onClose={() => setMenuOpen(false)}
         variant="temporary"
       >
-        {MenuData.map((menu) => (
-          <div key={menu.id}>
-            <Link
-              href={`/${menu.name.toLowerCase()}`}
-              as={`/${menu.name.toLowerCase()}`}
-            >
-              {menu.name}
-            </Link>
-          </div>
-        ))}
+        <Box
+          sx={{
+            width: 200,
+          }}
+        >
+          {MenuData.map((menu) => (
+            <div key={menu.id}>
+              <Link
+                href={`/${menu.name.toLowerCase()}`}
+                as={`/${menu.name.toLowerCase()}`}
+              >
+                {menu.name}
+              </Link>
+            </div>
+          ))}
+        </Box>
       </Drawer>
 
       {/* Cart Drawer */}
@@ -42,7 +49,18 @@ export const Navbar = () => {
         onClose={() => setCartOpen(false)}
         variant="temporary"
       >
-        <Cart />
+        <Box
+          sx={{
+            width: 300,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: 300,
+              boxSizing: "border-box",
+            },
+          }}
+        >
+          <Cart />
+        </Box>
       </Drawer>
 
       {/* Mobile Navbar menu */}

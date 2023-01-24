@@ -22,7 +22,7 @@ export default function Cart() {
 
   if (error) return <div>{error.message}</div>;
   return (
-    <div className="space-y-7">
+    <div className="space-y-7 p-3">
       <div>
         Subtotal: $
         {cartItems
