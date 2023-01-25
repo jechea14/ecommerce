@@ -3,7 +3,7 @@ import { Card } from "../components/Card";
 import useSWR from "swr";
 import { Loader } from "@mantine/core";
 
-const fetcher = async (url: string) => {
+export const fetcher = async (url: string) => {
   const res = await fetch(url);
   const data = await res.json();
 

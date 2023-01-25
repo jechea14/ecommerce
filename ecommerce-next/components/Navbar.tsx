@@ -63,13 +63,15 @@ export const Navbar = () => {
         </Box>
       </Drawer>
 
-      {/* Mobile Navbar menu */}
-      <button className="md:hidden">
-        <AiOutlineMenu size={25} onClick={() => setMenuOpen(true)} />
-      </button>
+      <div className="flex space-x-6">
+        {/* Mobile Navbar menu */}
+        <button className="md:hidden">
+          <AiOutlineMenu size={25} onClick={() => setMenuOpen(true)} />
+        </button>
 
-      <div>
-        <Link href={"/"}>Home</Link>
+        <div>
+          <Link href={"/"}>Home</Link>
+        </div>
       </div>
 
       {/* desktop menu */}
