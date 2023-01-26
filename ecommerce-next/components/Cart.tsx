@@ -22,21 +22,27 @@ export default function Cart() {
 
   if (error) return <div>{error.message}</div>;
   return (
-    <div className="space-y-7 p-3">
-      <div>
-        Subtotal: $
-        {cartItems
-          .reduce((total, cartItem) => {
-            const item = data?.find((i) => i.id === cartItem.id);
-            return total + (item?.price || 0) * cartItem.quantity;
-          }, 0)
-          .toFixed(2)}
-      </div>
-      {cartItems.map((item) => (
-        <div key={item.id}>
-          <CartItem id={item.id} quantity={item.quantity} />
+    <div className="space-y-7">
+      {cartItems.length > 0 ? (
+        <div>
+          <div>
+            Subtotal: $
+            {cartItems
+              .reduce((total, cartItem) => {
+                const item = data?.find((i) => i.id === cartItem.id);
+                return total + (item?.price || 0) * cartItem.quantity;
+              }, 0)
+              .toFixed(2)}
+          </div>
+          {cartItems.map((item) => (
+            <div key={item.id}>
+              <CartItem id={item.id} quantity={item.quantity} />
+            </div>
+          ))}
         </div>
-      ))}
+      ) : (
+        <div>Cart is empty</div>
+      )}
     </div>
   );
 }

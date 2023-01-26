@@ -38,8 +38,8 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
         />
         <h1>{item.name}</h1>
       </div>
-      <div className="text-center space-y-2">
-        <p>${(item.price * quantity).toFixed(2)}</p>
+      <div className="space-y-2">
+        <p className="pl-10">${(item.price * quantity).toFixed(2)}</p>
         <div className="flex space-x-3 items-center">
           <button
             className="bg-gray-500 text-slate-100 py-1 px-5"
@@ -53,6 +53,10 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
             onClick={() => addToCart(item.id)}
           >
             +
+          </button>
+
+          <button className="bg-red-700 text-slate-100 py-1 px-5">
+            Remove
           </button>
         </div>
       </div>

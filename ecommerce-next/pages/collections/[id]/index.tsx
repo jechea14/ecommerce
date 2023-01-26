@@ -32,9 +32,9 @@ const Collection = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <main className="md:flex pt-4">
-      <div>
-        <Carousel withIndicators={true}>
+    <main className="md:flex pt-4 md:space-x-12">
+      <div className="max-w-md">
+        <Carousel sx={{ maxWidth: 1000 }} withIndicators={true}>
           {data.image.map((image: string, i: number) => {
             return (
               <Carousel.Slide key={i}>

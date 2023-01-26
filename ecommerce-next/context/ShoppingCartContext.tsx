@@ -1,6 +1,4 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { Product } from "../interfaces/index";
-import { ProductData } from "../utils/data";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -9,6 +7,7 @@ type ShoppingCartProviderProps = {
 type ShoppingCartContext = {
   addToCart: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
+  removeFromCart: (id: number) => void;
   cartItems: CartItem[];
   cartQuantity: number;
 };
@@ -63,11 +62,19 @@ export const ShoppingCartProvider = ({
       }
     });
   };
+
+  const removeFromCart = (id: number) => {};
   console.log(cartItems);
 
   return (
     <ShoppingCartContext.Provider
-      value={{ addToCart, cartItems, decreaseCartQuantity, cartQuantity }}
+      value={{
+        addToCart,
+        cartItems,
+        decreaseCartQuantity,
+        cartQuantity,
+        removeFromCart,
+      }}
     >
       {children}
     </ShoppingCartContext.Provider>
