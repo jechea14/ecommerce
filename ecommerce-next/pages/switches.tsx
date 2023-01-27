@@ -52,22 +52,25 @@ export default function Switches() {
   return (
     <main className="space-y-4">
       <h1 className="text-xl">Switches</h1>
-      <div className="flex md:flex-col space-x-5 md:space-x-0">
-        {switchCategories?.map((switchCategory) => (
-          <label key={switchCategory}>
-            <input
-              type="checkbox"
-              onChange={filterHandler}
-              value={switchCategory}
-            />
-            {switchCategory}
-          </label>
-        ))}
-      </div>
-      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {filterSwitches?.map((cate) => (
-          <Card key={cate.id} item={cate} />
-        ))}
+      <div className="md:flex md:space-x-10">
+        <div className="flex md:flex-col space-x-5 md:space-x-0 md:min-w-fit">
+          <h2>Switch Type</h2>
+          {switchCategories?.map((switchCategory) => (
+            <label key={switchCategory}>
+              <input
+                type="checkbox"
+                onChange={filterHandler}
+                value={switchCategory}
+              />
+              {switchCategory}
+            </label>
+          ))}
+        </div>
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filterSwitches?.map((cate) => (
+            <Card key={cate.id} item={cate} />
+          ))}
+        </div>
       </div>
     </main>
   );

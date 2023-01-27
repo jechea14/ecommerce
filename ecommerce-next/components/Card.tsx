@@ -9,7 +9,7 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ item }) => {
   return (
-    <div className="border border-slate-700 rounded-lg p-4 bg-slate-800 space-y-3">
+    <div className="border border-slate-700 rounded-lg pb-4 bg-slate-800 space-y-3 ">
       <div className="relative overflow-hidden">
         <Image
           src={item.image[0]}
