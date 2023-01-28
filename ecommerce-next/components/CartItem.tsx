@@ -21,7 +21,7 @@ const fetcher = async (url: string) => {
 
 export const CartItem = ({ id, quantity }: CartItemProps) => {
   const { data, error } = useSWR<Product[]>(`/api/collections`, fetcher);
-  const { decreaseCartQuantity, addToCart } = useShoppingCart();
+  const { decreaseCartQuantity, addToCart, removeFromCart } = useShoppingCart();
   if (error) return <div>{error.message}</div>;
   const item = data?.find((i: any) => i.id === id);
   if (item == null) return null;
@@ -55,7 +55,10 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
             +
           </button>
 
-          <button className="bg-red-700 text-slate-100 py-1 px-5">
+          <button
+            className="bg-red-700 text-slate-100 py-1 px-5"
+            onClick={() => removeFromCart(item.id)}
+          >
             Remove
           </button>
         </div>

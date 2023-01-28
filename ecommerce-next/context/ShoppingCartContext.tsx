@@ -63,7 +63,11 @@ export const ShoppingCartProvider = ({
     });
   };
 
-  const removeFromCart = (id: number) => {};
+  const removeFromCart = (id: number) => {
+    setCartItems((prev) => {
+      return prev.filter((item) => item.id !== id);
+    });
+  };
   console.log(cartItems);
 
   return (
