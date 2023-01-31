@@ -81,8 +81,9 @@ export const Navbar = () => {
             href={`/${menu.name.toLowerCase()}`}
             as={`/${menu.name.toLowerCase()}`}
             key={menu.id}
+            className="font-semibold hover:text-purple-300 hover:transition"
           >
-            {menu.name}
+            {menu.name.toUpperCase()}
           </Link>
         ))}
       </div>

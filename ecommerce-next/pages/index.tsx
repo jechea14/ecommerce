@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <main className="space-y-5">
-      <h1 className="text-xl">All Products</h1>
+      <h1 className="text-xl text-center uppercase my-8">All Products</h1>
       <section className="grid gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap">
         {data?.map((product: Product) => (
           <Card key={product.id} item={product} />

@@ -60,7 +60,7 @@ const Collection = () => {
         )}
 
         <div className="flex space-x-4 flex-wrap">
-          <div className="">
+          <div className="space-x-2">
             <button
               className="bg-gray-500 text-slate-100 py-1 px-5"
               onClick={() => decreaseCartQuantity(data.id)}

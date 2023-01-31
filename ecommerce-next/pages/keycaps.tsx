@@ -30,7 +30,7 @@ export default function Keycaps() {
   const filterToKeycaps = data?.filter((item) => item.productType === "Keycap");
   return (
     <main className="space-y-4">
-      <h1 className="text-xl">Keycaps</h1>
+      <h1 className="text-xl text-center uppercase my-8">Keycaps</h1>
       <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filterToKeycaps?.map((keycap) => (
           <Card key={keycap.id} item={keycap} />

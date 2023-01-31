@@ -51,9 +51,11 @@ export default function Switches() {
   };
   return (
     <main className="space-y-4">
-      <h1 className="text-xl">Switches</h1>
+      <h1 className="text-xl text-center uppercase my-8 text-purple-300 font-medium">
+        Switches
+      </h1>
       <div className="md:flex md:space-x-10">
-        <div className="flex md:flex-col space-x-5 md:space-x-0 md:min-w-fit">
+        <div className="flex md:flex-col space-x-5 md:space-x-0 md:min-w-fitmd:pr-4">
           <h2>Switch Type</h2>
           {switchCategories?.map((switchCategory) => (
             <label key={switchCategory}>

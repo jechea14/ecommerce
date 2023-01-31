@@ -9,20 +9,19 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ item }) => {
   return (
-    <div className="pb-4 w-52">
+    <div className="pb-4 md:w-52">
       <Link
         href={`/collections/${item.slug}`}
         as={`/collections/${item.slug}`}
         key={item.id}
       >
         <div className="space-y-3">
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden h-48">
             <Image
               src={item.image[0]}
               alt={item.name}
               width={208}
               height={100}
-              className=""
             />
           </div>
           <div className="flex flex-col justify-between text-center px-1 ">
