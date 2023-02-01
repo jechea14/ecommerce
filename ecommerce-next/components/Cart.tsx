@@ -22,10 +22,10 @@ export default function Cart() {
 
   if (error) return <div>{error.message}</div>;
   return (
-    <div className="space-y-7">
+    <div className="space-y-7 p-4">
       {cartItems.length > 0 ? (
         <div>
-          <div>
+          <div className="mb-4">
             Subtotal: $
             {cartItems
               .reduce((total, cartItem) => {
