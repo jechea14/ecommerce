@@ -15,7 +15,7 @@
   body {
     /* take tailwind classes and apply them directly to body tag,
     powerful to fix rubberband scroll */
-    @apply bg-slate-900 text-gray-200;
+    @apply bg-[#222831] text-gray-200;
     /* display: flex;
     justify-content: center; */
     width: 100%;
