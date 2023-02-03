@@ -29,16 +29,18 @@ export const Navbar = () => {
             width: 200,
           }}
         >
-          {MenuData.map((menu) => (
-            <div key={menu.id}>
-              <Link
-                href={`/${menu.name.toLowerCase()}`}
-                as={`/${menu.name.toLowerCase()}`}
-              >
-                {menu.name}
-              </Link>
-            </div>
-          ))}
+          <div className="p-4 space-y-4">
+            {MenuData.map((menu) => (
+              <div key={menu.id} className="uppercase">
+                <Link
+                  href={`/${menu.name.toLowerCase()}`}
+                  as={`/${menu.name.toLowerCase()}`}
+                >
+                  {menu.name}
+                </Link>
+              </div>
+            ))}
+          </div>
         </Box>
       </Drawer>
 
