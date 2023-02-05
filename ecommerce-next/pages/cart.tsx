@@ -13,7 +13,7 @@ const fetcher = async (url: string) => {
   return data;
 };
 
-export default function cart() {
+export default function Cart() {
   const { cartItems } = useShoppingCart();
   const { data, error, isLoading } = useSWR<Product[]>(
     () => `/api/collections`,
