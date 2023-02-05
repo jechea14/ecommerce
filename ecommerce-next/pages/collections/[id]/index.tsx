@@ -33,7 +33,7 @@ const Collection = () => {
 
   return (
     <main className="md:flex pt-4 md:space-x-12">
-      <div className="max-w-md">
+      <div className="max-w-md md:w-full">
         <Carousel sx={{ maxWidth: 1000 }} withIndicators={true}>
           {data.image.map((image: string, i: number) => {
             return (
@@ -60,7 +60,7 @@ const Collection = () => {
         )}
 
         <div className="flex space-x-4 flex-wrap">
-          <div className="space-x-2">
+          {/* <div className="space-x-2">
             <button
               className="bg-gray-500 text-slate-100 py-1 px-5"
               onClick={() => decreaseCartQuantity(data.id)}
@@ -73,13 +73,16 @@ const Collection = () => {
             >
               +
             </button>
-          </div>
-          {/* <button className="bg-gray-500 text-slate-100 py-1 px-5">
+          </div> */}
+          <button
+            className="bg-purple-600 hover:bg-purple-500 hover:transition text-slate-100 py-3 px-5 w-full uppercase lg:w-3/5"
+            onClick={() => addToCart(data.id)}
+          >
             Add to cart
-          </button> */}
+          </button>
         </div>
 
-        <p>{data.description}</p>
+        <p className="lg:w-3/5">{data.description}</p>
         <h2>
           <strong>Features:</strong>
         </h2>

@@ -27,8 +27,8 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
   if (item == null) return null;
 
   return (
-    <div className="flex flex-col items-center space-y-3 border-t-2 py-4 border-slate-400">
-      <div className="flex space-x-2">
+    <div className="flex flex-col space-y-3 border-t-2 py-4 border-slate-400">
+      <div className="flex space-x-4">
         <Image
           src={item.image[0]}
           alt={item.name}

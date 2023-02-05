@@ -29,9 +29,12 @@ export const Navbar = () => {
             width: 200,
           }}
         >
-          <div className="p-4 space-y-4">
+          <div className="p-10 space-y-4">
             {MenuData.map((menu) => (
-              <div key={menu.id} className="uppercase">
+              <div
+                key={menu.id}
+                className="uppercase hover:text-purple-500 hover:transition"
+              >
                 <Link
                   href={`/${menu.name.toLowerCase()}`}
                   as={`/${menu.name.toLowerCase()}`}
@@ -77,7 +80,7 @@ export const Navbar = () => {
       </div>
 
       {/* desktop menu */}
-      <div className="hidden md:flex md: space-x-6">
+      <div className="hidden md:flex md:space-x-6">
         {MenuData.map((menu) => (
           <Link
             href={`/${menu.name.toLowerCase()}`}
