@@ -2,6 +2,7 @@ import { Product } from "../interfaces";
 import { Card } from "../components/Card";
 import useSWR from "swr";
 import { Loader } from "@mantine/core";
+import HeroSection from "../components/HeroSection";
 
 export const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <main className="space-y-5">
+      <HeroSection />
       <h1 className="text-xl text-center uppercase my-8 text-purple-300">
         All Products
       </h1>

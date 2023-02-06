@@ -1,4 +1,19 @@
-import { Product, Menu } from "../interfaces";
+import { Product, Menu, HeroSectionImages } from "../interfaces";
+
+export const HeroSectionData: HeroSectionImages[] = [
+    {
+        id: 1,
+        image: '/images/heroSection/GMK_Electric_Keycaps.webp'
+    },
+    {
+        id: 2,
+        image: '/images/heroSection/ePBT_Origami_Keycaps.webp'
+    },
+    // {
+    //     id: 3,
+    //     image: '/images/heroSection/QK_80.webp'
+    // }
+]
 
 export const MenuData: Menu[] = [
     {

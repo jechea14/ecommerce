@@ -26,3 +26,8 @@ export type Product = {
     productType: "Keycap" | "Switch" | "Keyboard"
     switchType?: "Linear" | "Tactile" | "Clicky"
 }
+
+export type HeroSectionImages = {
+  id: number
+  image: string
+}
