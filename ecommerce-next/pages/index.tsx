@@ -30,7 +30,6 @@ export default function Home() {
 
   return (
     <main className="space-y-5">
-      <HeroSection />
       <h1 className="text-xl text-center uppercase my-8 text-purple-300">
         All Products
       </h1>

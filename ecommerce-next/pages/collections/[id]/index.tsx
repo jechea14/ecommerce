@@ -34,7 +34,18 @@ const Collection = () => {
   return (
     <main className="md:flex pt-4 md:space-x-12">
       <div className="max-w-md md:w-full">
-        <Carousel sx={{ maxWidth: 1000 }} withIndicators={true}>
+        <Carousel
+          sx={{ maxWidth: 1000 }}
+          withIndicators={true}
+          styles={{
+            control: {
+              "&[data-inactive]": {
+                opacity: 0,
+                cursor: "default",
+              },
+            },
+          }}
+        >
           {data.image.map((image: string, i: number) => {
             return (
               <Carousel.Slide key={i}>
