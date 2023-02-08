@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import { Product } from "../interfaces";
-import { Loader } from "@mantine/core";
+import { Container, Loader } from "@mantine/core";
 import { Card } from "../components/Card";
 
 const fetcher = async (url: string) => {
@@ -29,15 +29,17 @@ export default function Keycaps() {
 
   const filterToKeycaps = data?.filter((item) => item.productType === "Keycap");
   return (
-    <main className="space-y-4">
-      <h1 className="text-xl text-center uppercase text-purple-300 my-8">
-        Keycaps
-      </h1>
-      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {filterToKeycaps?.map((keycap) => (
-          <Card key={keycap.id} item={keycap} />
-        ))}
-      </div>
+    <main>
+      <Container size="xl" className="space-y-4">
+        <h1 className="text-xl text-center uppercase text-purple-300 my-8">
+          Keycaps
+        </h1>
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filterToKeycaps?.map((keycap) => (
+            <Card key={keycap.id} item={keycap} />
+          ))}
+        </div>
+      </Container>
     </main>
   );
 }

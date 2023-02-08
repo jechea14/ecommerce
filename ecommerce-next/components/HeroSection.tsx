@@ -8,8 +8,8 @@ export default function HeroSection() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
 
   return (
-    <section className="h-full w-full relative mt-5">
-      <div className="flex h-full">
+    <section className="h-full w-full relative">
+      <div className="flex">
         <Carousel
           loop
           height="100%"

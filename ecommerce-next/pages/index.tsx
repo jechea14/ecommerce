@@ -3,6 +3,7 @@ import { Card } from "../components/Card";
 import useSWR from "swr";
 import { Loader } from "@mantine/core";
 import HeroSection from "../components/HeroSection";
+import { Container } from "@mantine/core";
 
 export const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -29,15 +30,20 @@ export default function Home() {
     );
 
   return (
-    <main className="space-y-5">
-      <h1 className="text-xl text-center uppercase my-8 text-purple-300">
-        All Products
-      </h1>
-      <section className="grid gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap">
-        {data?.map((product: Product) => (
-          <Card key={product.id} item={product} />
-        ))}
-      </section>
+    <main>
+      <div className="relative bottom-14 -z-10 overflow-hidden">
+        <HeroSection />
+      </div>
+      <Container size="xl" className="space-y-5">
+        <h1 className="text-xl text-center uppercase my-8 text-purple-300">
+          All Products
+        </h1>
+        <section className="grid gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap">
+          {data?.map((product: Product) => (
+            <Card key={product.id} item={product} />
+          ))}
+        </section>
+      </Container>
     </main>
   );
 }

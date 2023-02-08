@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import { Product } from "../interfaces";
-import { Loader } from "@mantine/core";
+import { Container, Loader } from "@mantine/core";
 import { Card } from "../components/Card";
 
 const fetcher = async (url: string) => {
@@ -50,30 +50,32 @@ export default function Switches() {
     }
   };
   return (
-    <main className="space-y-4 md:px-3">
-      <h1 className="text-xl text-center uppercase my-8 text-purple-300 font-medium">
-        Switches
-      </h1>
-      <div className="md:flex md:space-x-10">
-        <div className="flex mb-5 md:flex-col space-x-5 md:space-x-0 md:min-w-fitmd:pr-4">
-          <h2>Switch Type</h2>
-          {switchCategories?.map((switchCategory) => (
-            <label key={switchCategory}>
-              <input
-                type="checkbox"
-                onChange={filterHandler}
-                value={switchCategory}
-              />
-              {switchCategory}
-            </label>
-          ))}
+    <main>
+      <Container size="xl" className="space-y-4 md:px-3">
+        <h1 className="text-xl text-center uppercase my-8 text-purple-300 font-medium">
+          Switches
+        </h1>
+        <div className="md:flex md:space-x-10">
+          <div className="flex mb-5 md:flex-col space-x-5 md:space-x-0 md:min-w-fitmd:pr-4">
+            <h2>Switch Type</h2>
+            {switchCategories?.map((switchCategory) => (
+              <label key={switchCategory}>
+                <input
+                  type="checkbox"
+                  onChange={filterHandler}
+                  value={switchCategory}
+                />
+                {switchCategory}
+              </label>
+            ))}
+          </div>
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {filterSwitches?.map((cate) => (
+              <Card key={cate.id} item={cate} />
+            ))}
+          </div>
         </div>
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {filterSwitches?.map((cate) => (
-            <Card key={cate.id} item={cate} />
-          ))}
-        </div>
-      </div>
+      </Container>
     </main>
   );
 }
