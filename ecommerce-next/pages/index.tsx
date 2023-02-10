@@ -31,10 +31,12 @@ export default function Home() {
 
   return (
     <main>
-      <div className="relative bottom-14 -z-10 overflow-hidden">
-        <HeroSection />
-      </div>
       <Container size="xl" className="space-y-5">
+        <div className="mt-5">
+          {" "}
+          <HeroSection />
+        </div>
+
         <h1 className="text-xl text-center uppercase my-8 text-purple-300">
           All Products
         </h1>

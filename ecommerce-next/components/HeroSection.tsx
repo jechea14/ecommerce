@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { HeroSectionData } from "../utils/data";
 
 export default function HeroSection() {
-  const autoplay = useRef(Autoplay({ delay: 5000 }));
+  const autoplay = useRef(Autoplay({ delay: 6000 }));
 
   return (
     <section className="h-full w-full relative">
