@@ -34,7 +34,10 @@ const Collection = () => {
 
   return (
     <main>
-      <Container size="xl" className="md:flex pt-4 md:space-x-12">
+      <Container
+        size="xl"
+        className="md:flex pt-4 md:space-x-12 md:justify-center"
+      >
         <div className="max-w-md md:w-full">
           <Carousel
             sx={{ maxWidth: 1000 }}
@@ -63,7 +66,7 @@ const Collection = () => {
           </Carousel>
         </div>
 
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 max-w-sm">
           <h1 className="text-xl pt-4">{data.name}</h1>
           <h1 className="text-xl">
             <strong>${data.price.toFixed(2)}</strong>
@@ -73,29 +76,15 @@ const Collection = () => {
           )}
 
           <div className="flex space-x-4 flex-wrap">
-            {/* <div className="space-x-2">
             <button
-              className="bg-gray-500 text-slate-100 py-1 px-5"
-              onClick={() => decreaseCartQuantity(data.id)}
-            >
-              -
-            </button>
-            <button
-              className="bg-gray-500 text-slate-100 py-1 px-5"
-              onClick={() => addToCart(data.id)}
-            >
-              +
-            </button>
-          </div> */}
-            <button
-              className="bg-purple-600 hover:bg-purple-500 hover:transition text-slate-100 py-3 px-5 w-full uppercase lg:w-3/5"
+              className="bg-purple-600 hover:bg-purple-500 hover:transition text-slate-100 py-3 px-5 w-full uppercase"
               onClick={() => addToCart(data.id)}
             >
               Add to cart
             </button>
           </div>
 
-          <p className="lg:w-3/5">{data.description}</p>
+          <p className="">{data.description}</p>
           <h2>
             <strong>Features:</strong>
           </h2>
