@@ -7,10 +7,6 @@ import useSWR from "swr";
 import { useShoppingCart } from "../../../context/ShoppingCartContext";
 import { Container } from "@mantine/core";
 
-type ProductProps = {
-  handleAddToCart: (clickedItem: Product) => void;
-};
-
 const fetcher = async (url: string) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -22,7 +18,7 @@ const fetcher = async (url: string) => {
 };
 
 const Collection = () => {
-  const { addToCart, decreaseCartQuantity } = useShoppingCart();
+  const { addToCart } = useShoppingCart();
   const { query } = useRouter();
   const { data, error } = useSWR(
     () => query.id && `/api/collections/${query.id}`,
@@ -67,7 +63,7 @@ const Collection = () => {
         </div>
 
         <div className="flex flex-col space-y-4 max-w-sm">
-          <h1 className="text-xl pt-4">{data.name}</h1>
+          <h1 className="text-xl">{data.name}</h1>
           <h1 className="text-xl">
             <strong>${data.price.toFixed(2)}</strong>
           </h1>
