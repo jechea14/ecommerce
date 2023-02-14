@@ -73,15 +73,15 @@ export const Navbar = () => {
           </Box>
         </Drawer>
 
-        <div className="flex space-x-6">
+        <div className="flex">
           {/* Mobile Navbar menu */}
-          <button className="md:hidden">
+          <button className="md:hidden mr-3">
             <AiOutlineMenu size={25} onClick={() => setMenuOpen(true)} />
           </button>
 
-          <div>
-            <Link href={"/"}>Home</Link>
-          </div>
+          <Link href={"/"}>
+            <button>Home</button>
+          </Link>
         </div>
 
         {/* desktop menu */}
@@ -93,7 +93,7 @@ export const Navbar = () => {
               key={menu.id}
               className="font-semibold hover:text-purple-300 hover:transition"
             >
-              {menu.name.toUpperCase()}
+              <button>{menu.name.toUpperCase()}</button>
             </Link>
           ))}
         </div>
