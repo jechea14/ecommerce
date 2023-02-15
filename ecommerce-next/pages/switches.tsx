@@ -64,6 +64,7 @@ export default function Switches() {
                   type="checkbox"
                   onChange={filterHandler}
                   value={switchCategory}
+                  className="mr-2"
                 />
                 {switchCategory}
               </label>
