@@ -209,5 +209,22 @@ export const ProductData: Product[] = [
                 ],
         productType: "Keycap",
     },
+    {
+        id: 10,
+        name: "NK87™ - Darkshake Edition",
+        slug: "nk87-darkshake-edition",
+        price: 225.00,
+        image: ["/images/nk87/NK87_DarkMilkshake1.webp", "/images/nk87/NK87_DarkMilkshake2.webp", "/images/nk87/NK87_DarkMilkshake3.webp"],
+        description: "The NK87™ - Darkshake Edition is an injection-molded TKL keyboard with a hotswap PCB assembled with Silk Milkshake switches and PBT dyesub keycaps.",
+        feature: [
+                    "Hotswap", 
+                    "VIA Compatible",
+                    "USB C",
+                    "Per switch RGB lighting (programmable via VIA)",
+                    "Injection Molded Polycarbonate Case",
+                    "Injection Molded Polycarbonate Plate"
+                ],
+        productType: "Keyboard",
+    },
 
 ]

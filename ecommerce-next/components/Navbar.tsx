@@ -98,20 +98,15 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Account and Cart */}
-        <div className="flex gap-x-2">
-          <button>
-            <VscAccount size={28} />
-          </button>
-          <button onClick={() => setCartOpen(true)} className="relative">
-            <AiOutlineShoppingCart size={30} />
-            {cartQuantity > 0 && (
-              <div className="rounded-2xl w-5 h-5 bg-red-600 flex justify-center items-center absolute bottom-4 -right-1">
-                {cartQuantity}
-              </div>
-            )}
-          </button>
-        </div>
+        {/* Cart */}
+        <button onClick={() => setCartOpen(true)} className="relative">
+          <AiOutlineShoppingCart size={30} />
+          {cartQuantity > 0 && (
+            <div className="rounded-2xl w-5 h-5 bg-red-600 flex justify-center items-center absolute bottom-4 -right-1">
+              {cartQuantity}
+            </div>
+          )}
+        </button>
       </Container>
     </nav>
   );
