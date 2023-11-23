@@ -91,7 +91,7 @@ export const Navbar = () => {
               href={`/${menu.name.toLowerCase()}`}
               as={`/${menu.name.toLowerCase()}`}
               key={menu.id}
-              className="font-semibold hover:text-purple-300 hover:transition"
+              className="font-semibold hover:text-purple-500 hover:transition"
             >
               <button>{menu.name.toUpperCase()}</button>
             </Link>
@@ -102,7 +102,7 @@ export const Navbar = () => {
         <button onClick={() => setCartOpen(true)} className="relative">
           <AiOutlineShoppingCart size={30} />
           {cartQuantity > 0 && (
-            <div className="rounded-2xl w-5 h-5 bg-red-600 flex justify-center items-center absolute bottom-4 -right-1">
+            <div className="rounded-2xl w-5 h-5 bg-red-400 flex justify-center items-center absolute bottom-4 -right-1">
               {cartQuantity}
             </div>
           )}

@@ -52,7 +52,7 @@ export default function Switches() {
   return (
     <main>
       <Container size="xl" className="space-y-4 md:px-3">
-        <h1 className="text-xl text-center uppercase my-8 text-purple-300 font-medium">
+        <h1 className="text-xl text-center uppercase my-8 text-purple-700 font-medium">
           Switches
         </h1>
         <div className="md:flex md:space-x-10">

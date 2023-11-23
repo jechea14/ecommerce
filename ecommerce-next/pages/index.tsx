@@ -37,7 +37,7 @@ export default function Home() {
           <HeroSection />
         </div>
 
-        <h1 className="text-xl text-center uppercase my-8 text-purple-300">
+        <h1 className="text-xl text-center uppercase my-8 text-purple-700">
           All Products
         </h1>
         <section className="grid gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap">

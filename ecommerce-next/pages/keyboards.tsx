@@ -33,7 +33,7 @@ export default function Keyboards() {
   return (
     <main>
       <Container size="xl" className="space-y-4">
-        <h1 className="text-xl text-center uppercase text-purple-300 my-8">
+        <h1 className="text-xl text-center uppercase text-purple-700 my-8">
           Keyboards
         </h1>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
